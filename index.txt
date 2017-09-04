@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Stomp Client Over Websocket</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 class="body">Stomp Test Client For Equity Stream Service</h1>
+        <style type="text/css">
+            .body {background-color:#3C3C3C;color:#FFFFFF}
+            .font {font-size: 18px;font-family: "FS Me Web",Arial,Helvetica,sans-serif}
+            .li{line-height:18px;font-size:18px;width:35%;margin-left: 10px;overflow:hidden}
+            .button{background-image:linear-gradient(to bottom,#fff,#dde9f1);margin-left: 40px;font-size: 14px}
+            .tt{width:1500px}
+            .whole{table-layout:fixed;}
+            .tin{overflow:hidden; white-space:nowrap;text-overflow:ellipsis;}
+            .tx{word-wrap : break-word;}
+        </style>
+
+        <form action="">
+            <table class="whole">
+                <tr > <td ><li class="font">URL (All):</td>
+                    <td  class="tt"><input id="url" name="url" type="text" class="li tin" ></td></tr>
+
+                <tr> <td><li class="font">Queue (Subscribe):</td>
+                    <td class="tt"><input id="queue" name="queue" type="text" class="li tin" ></td></tr>
+
+                <tr> <td><li class="font">ID(Subscribe):</td>
+                    <td class="tt"><input id="subs" name="subs" type="text" class="li tin" ></td></tr>
+
+                <tr> <td><li class="font">ID(Unsubscribe): </td>
+                    <td class="tt"><input id="unsub" name="unsub" type="text" class="li tin" ></td></tr>
+
+                <tr> <td valign="top"><li class="font" >Emidas-token:</td>
+                    <td style="height:200px"><textarea id="authtoken" name="authtoken" type="text" class="li tx"  style="height:100%"> </textarea></td></tr>
+
+                <tr> <td><li class="font">Host (All):</td>
+                    <td class="tt"><input id="host" name="host" type="text" class="li tin" ></td></tr>
+
+                <tr></tr><tr></tr>
+            </table>
+            <table class="whole">
+                <tr>
+                    <td><input class="button" id="connect1" onclick="connect();"  value="Connect" type="button"></td>
+                    <td><input class="button" id="subscribe1" onclick="subscribe();" value="Subscribe" type="button"></td>
+                    <td><input class="button" id="unsubscribe1" onclick="unsubscribe();" value="Unsubscribe" type="button"></td>
+                    <td><input class="button" id="disconnect1" onclick="disconnect();" value="Disconnect" type="button"></td>
+                    <td><input class="button" id="clear" onclick="resetscreen();" value="Clear Screen" type="button"></td>
+                </tr>
+            </table>
+            <br><br>
+        </form>
+        
+        <div id="output"></div>
+        
+        <script src="stomp.js"></script>
+        <script src="application.js"></script>
+    </body>
+</html>
